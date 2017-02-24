@@ -42,6 +42,8 @@
     		triggerOnCreate: false,
     		event: 'click',
     		slideSpeed: 'fast',
+            afterInTarget: '',
+            beforeInTarget: '',
 
     		// Add before/after something
 
@@ -82,7 +84,15 @@
     			model.removeClass(settings.removeClassFromModel);
     		
     		//Append
-    		$(settings.target).append(model);
+            if(settings.afterInTarget != ''){
+                $(settings.target).find(settings.afterInTarget).after(model);
+            } else if(settings.beforeInTarget != '') {
+                $(settings.target).find(settings.beforeInTarget).before(model);
+            } else {
+                $(settings.target).append(model);
+            }
+
+            //Choose
     		switch(settings.slideDirection) {
     			case 'down':
 		    		model.slideDown(settings.slideSpeed);
