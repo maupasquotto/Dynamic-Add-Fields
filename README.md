@@ -1,12 +1,12 @@
 # Dynamic Add Fields JQuery
 Dynamic Add Objects/Divs/Fields into your code using this library based in JQuery
 
-##Features
+## Features
  * Dynamic add an objetc into your DOM from a model to a target
  * Animate options
  * Set different events to trigger
  
-##Exemple
+## Exemple
 ```javascript
 $(document).ready(function() {
   $('.addNewThing').modelToClone({
